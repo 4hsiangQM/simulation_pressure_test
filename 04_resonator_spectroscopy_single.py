@@ -14,7 +14,7 @@ Prerequisites:
 Before proceeding to the next node:
     - Update the readout frequency, labeled as "resonator_IF_q1" and "resonator_IF_q2", in the configuration.
 """
-
+#%%
 from qm.qua import *
 from qm import QuantumMachinesManager
 from qm import SimulationConfig
@@ -96,7 +96,7 @@ simulate = False
 
 if simulate:
     # Simulates the QUA program for the specified duration
-    simulation_config = SimulationConfig(duration=10_000)  # In clock cycles = 4ns
+    simulation_config = SimulationConfig(duration=5_000)  # In clock cycles = 4ns
     # Simulate blocks python until the simulation is done
     job = qmm.simulate(config, resonator_spec, simulation_config)
     # Get the simulated samples
@@ -109,9 +109,10 @@ if simulate:
     waveform_dict = waveform_report.to_dict()
     # Visualize and save the waveform report
     waveform_report.create_plot(samples, plot=True, save_path=str(Path(__file__).resolve()))
+#%%
 else:
     # Open a quantum machine to execute the QUA program
-    qm = qmm.open_qm(config)
+    qm = qmm.open_qm(config,close_other_machines=False)
     # Send the QUA program to the OPX, which compiles and executes it
     job = qm.execute(resonator_spec)
     # Get results from QUA program

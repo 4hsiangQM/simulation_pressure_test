@@ -330,18 +330,21 @@ config = {
                             "band": 2,
                             "full_scale_power_dbm": resonator_power,
                             "upconverters": {1: {"frequency": resonator_LO}},
+                            "shareable": True
                         },
                         # Qubit 1 XY
                         2: {
                             "band": 1,
                             "full_scale_power_dbm": qubit_power,
                             "upconverters": {1: {"frequency": qubit_LO_q1}},
+                            "shareable": True
                         },
                         # Qubit 2 XY
                         3: {
                             "band": 1,
                             "full_scale_power_dbm": qubit_power,
                             "upconverters": {1: {"frequency": qubit_LO_q2}},
+                            "shareable": True
                         },
                     },
                     "digital_outputs": {},
@@ -373,6 +376,7 @@ config = {
                             # Synchronization of the LF-FEM outputs with the MW-FEM outputs
                             # 141ns delay (band 1 and 3) or 161ns delay (band 2)
                             "delay": 141 * u.ns,
+                            "shareable": True
                         },
                         # Q2 flux line
                         2: {
@@ -380,6 +384,7 @@ config = {
                             "output_mode": "amplified",
                             "sampling_rate": sampling_rate,
                             "upsampling_mode": "pulse",
+                            "shareable": True
                         },
                     },
                     "digital_outputs": {
