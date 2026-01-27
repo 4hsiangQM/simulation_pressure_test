@@ -1,0 +1,11 @@
+# ---- Python bytecode ----
+__pycache__/
+
+# ---- Virtual environments ----
+.venv/
+venv/
+
+# ---- OS files ----
+.DS_Store
+
+
