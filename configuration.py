@@ -347,8 +347,7 @@ config = {
                     },
                     "digital_outputs": {},
                     "analog_inputs": {
-                        1: {"band": 2, "downconverter_frequency": resonator_LO,"shareable": True
-},  # for down-conversion
+                        1: {"band": 2, "downconverter_frequency": resonator_LO,"shareable": True},  # for down-conversion
                     },
                 },
                 lf_fem: {
