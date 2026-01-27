@@ -114,7 +114,8 @@ else:
     # Open a quantum machine to execute the QUA program
     qm = qmm.open_qm(config,close_other_machines=False)
     # Send the QUA program to the OPX, which compiles and executes it
-    job = qm.execute(resonator_spec)
+    #job = qm.execute(resonator_spec)
+    job = qm.queue.add(resonator_spec)
     # Get results from QUA program
     results = fetching_tool(job, data_list=["I", "Q", "iteration"], mode="live")
     # Live plotting
