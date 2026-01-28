@@ -71,7 +71,7 @@ if simulate:
     waveform_report.create_plot(samples, plot=True, save_path=str(Path(__file__).resolve()))
 else:
     # Open a quantum machine to execute the QUA program
-    qm = qmm.open_qm(config)
+    qm = qmm.open_qm(config, close_other_machines=False)
     # Send the QUA program to the OPX, which compiles and executes it
     job = qm.execute(raw_trace_prog)
     # Creates a result handle to fetch data from the OPX

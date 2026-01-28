@@ -78,7 +78,7 @@ if simulate:
 
 else:
     # Open the quantum machine
-    qm = qmm.open_qm(config)
+    qm = qmm.open_qm(config,close_other_machines=False)
     # Send the QUA program to the OPX, which compiles and executes it
     job = qm.execute(raw_trace_prog)
     # Creates a result handle to fetch data from the OPX
