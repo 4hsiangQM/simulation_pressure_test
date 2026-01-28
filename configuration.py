@@ -347,7 +347,7 @@ config = {
                             "shareable": True
                         },
                     },
-                    "digital_outputs": {},
+                    "digital_outputs": {1: {"shareable": True}},
                     "analog_inputs": {
                         1: {"band": 2, "downconverter_frequency": resonator_LO,"shareable": True},  # for down-conversion
                     },
@@ -388,7 +388,7 @@ config = {
                         },
                     },
                     "digital_outputs": {
-                        1: {},
+                        1: {"shareable": True},
                     },
                 },
             },
